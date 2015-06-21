@@ -8,7 +8,7 @@ from struct import unpack, pack
 #
 
 class Infects:
-	__name__ = ""
+	__file__ = ""
 	__data__ = ""
 	__jmp__ = ""
 	__urCode__ = ""
@@ -16,7 +16,7 @@ class Infects:
 	__entryPoint__ = 0
 
 	def __init__(self, name):
-		self.__name__ = name
+		self.__file__ = name
 		with open(name, "rb") as f:
 			self.__data__ = f.read()
 		self.setEP()
