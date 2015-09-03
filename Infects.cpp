@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include <iostream>
-#include <stdio.h>
 #include <windows.h>
 
 #define JMP_LEN 5
